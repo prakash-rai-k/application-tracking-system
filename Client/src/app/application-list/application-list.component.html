@@ -1,0 +1,51 @@
+<div class="container">
+    <br/>
+    <h3>My applications</h3>
+    <br/>
+    
+    <button class="btn btn-primary" routerLink='/dashboard/new'><i class="fa fa-plus"></i> Add new application</button>
+    <input class="form-control mr-sm-2 app-search" type="text" placeholder="Search" (keyup)="search($event)">
+    <br/><br/>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Company</th>
+          <th scope="col">Post</th>
+          <th scope="col">City</th>
+          <th scope="col">Email</th>
+          <th scope="col">Resume</th>
+          <th scope="col">Update</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr class="" *ngFor="let application of applications">
+          <th scope="row">{{application.companyName}}</th>
+          <td>{{application.companyName}}</td>
+          <td>{{application.city}}</td>
+          <td>{{application.email}}</td>
+          <td>{{application.resumeVersion}}</td>
+          <td data = "data">
+            <i class="fa fa-edit cursor-class" (click) = "editApplication(application)"></i>
+            &nbsp;
+            <i class="fa fa-remove cursor-class" (click) = "deleteApplication(application)"></i>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table> 
+    <div class="float-right">
+        <ul class="pagination pagination-sm">
+          <li class="page-item disabled">
+            <a class="page-link" href="#">&laquo;</a>
+          </li>
+          <li class="page-item active">
+            <a class="page-link" href="#">1</a>
+          </li>
+          
+          <li class="page-item disabled">
+            <a class="page-link " href="#">&raquo;</a>
+          </li>
+        </ul>
+      </div>
+  </div>

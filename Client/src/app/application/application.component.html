@@ -1,0 +1,31 @@
+<div class="container">
+  <br/>
+  <h3>My applications</h3>
+  <br/>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Company</th>
+        <th scope="col">Post</th>
+        <th scope="col">City</th>
+        <th scope="col">Email</th>
+        <th scope="col">Resume</th>
+        <th scope="col">Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-secondary" *ngFor="let application of applications">
+        <th scope="row">{{application.companyName}}</th>
+        <td>{{application.companyName}}</td>
+        <td>{{application.city}}</td>
+        <td>{{application.email}}</td>
+        <td>{{application.resumeVersion}}</td>
+        <td data = "data">
+          <i class="fa fa-edit"></i>
+          &nbsp;
+          <i class="fa fa-remove" (click) = "deleteApplication(application)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table> 
+</div>

@@ -1,0 +1,189 @@
+<div class="row">
+   
+    <div class="col-1"></div>
+    <div class="col-10">
+        <br/><br/>
+        <h6>Update Job Application </h6>
+        <hr/>
+        <br/>
+        <form
+        #applicationForm="ngForm"
+          (ngSubmit) = "updateApplication()"
+          >
+            <fieldset>
+              <div class="form-group row">
+                <input type="hidden" name="_id" [(ngModel)]="application._id" #_id ="ngModel"/>
+                <label for="companyName" class="col-sm-12 col-form-label">Company Name</label>
+                <div class="col-sm-12">
+                    
+                <input type="text"
+                    class="form-control"
+                    name="companyName"
+                    [(ngModel)]="application.companyName"
+                    required
+                    #companyName="ngModel">
+                <div class="form-control-feedback"
+                  *ngIf="companyName.errors && (companyName.dirty || companyName.touched)">
+                  <p *ngIf="companyName.errors.required">Company name is required</p>
+                </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-12 col-form-label">City</label>
+                <div class="col-sm-12">
+                    
+                <input type="text"
+                    class="form-control"
+                    name="city"
+                    [(ngModel)]="application.city"
+                    required
+                    #city="ngModel">
+                <div class="form-control-feedback"
+                  *ngIf="city.errors && (city.dirty || city.touched)">
+                  <p *ngIf="city.errors.required">City name is required</p>
+                </div>
+                </div>
+              </div>
+  
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-12 col-form-label">Posted Site</label>
+                <div class="col-sm-12">
+                    
+                <input type="text"
+                    class="form-control"
+                    name="postWebsite"
+                    [(ngModel)]="application.postWebsite"
+                    required
+                    #postWebsite="ngModel">
+                <div class="form-control-feedback"
+                  *ngIf="postWebsite.errors && (postWebsite.dirty || postWebsite.touched)">
+                  <p *ngIf="postWebsite.errors.required">Posted site name is required</p>
+                </div>
+                </div>
+              </div>
+  
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-12 col-form-label">Job Description</label>
+                <div class="col-sm-12">
+                    <textarea
+                    class="form-control"
+                    name="jobDescription"
+                    [(ngModel)]="application.jobDescription"
+                    required
+                    #jobDescription="ngModel"
+                    ></textarea>
+                <div class="form-control-feedback"
+                  *ngIf="jobDescription.errors && (jobDescription.dirty || jobDescription.touched)">
+                  <p *ngIf="jobDescription.errors.required">Job Description name is required</p>
+                </div>
+                </div>
+              </div>
+  
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-12 col-form-label">Source Of JobPosting</label>
+                <div class="col-sm-12">
+                    
+                <input type="text"
+                    class="form-control"
+                    name="sourceOfJobPosting"
+                    [(ngModel)]="application.sourceOfJobPosting"
+                    required
+                    #sourceOfJobPosting="ngModel">
+                <div class="form-control-feedback"
+                  *ngIf="sourceOfJobPosting.errors && (sourceOfJobPosting.dirty || sourceOfJobPosting.touched)">
+                  <p *ngIf="sourceOfJobPosting.errors.required">Source Of Job Posting name is required</p>
+                </div>
+                </div>
+              </div>
+  
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-12 col-form-label">Email</label>
+                <div class="col-sm-12">
+                    
+                <input type="text"
+                    class="form-control"
+                    name="email"
+                    [(ngModel)]="application.email"
+                    required
+                    pattern="[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+                    #email="ngModel">
+                <div class="form-control-feedback"
+                  *ngIf="email.errors && (email.dirty || email.touched)">
+                  <p *ngIf="email.errors.required">Email name is required</p>
+                  <p *ngIf="email.errors.pattern">Email must contain @</p>
+                </div>
+                </div>
+              </div>
+  
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-12 col-form-label">contactName</label>
+                <div class="col-sm-12">
+                    
+                <input type="text"
+                    class="form-control"
+                    name="contactName"
+                    [(ngModel)]="application.contactName"
+                    required
+                    #contactName="ngModel">
+                <div class="form-control-feedback"
+                  *ngIf="contactName.errors && (contactName.dirty || contactName.touched)">
+                  <p *ngIf="contactName.errors.required">Contact Name name is required</p>
+                </div>
+                </div>
+              </div>
+  
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-12 col-form-label">Phone Number</label>
+                <div class="col-sm-12">
+                    
+                <input type="text"
+                    class="form-control"
+                    name="phoneNumber"
+                    [(ngModel)]="application.phoneNumber"
+                    required
+                    #phoneNumber="ngModel">
+                <div class="form-control-feedback"
+                  *ngIf="phoneNumber.errors && (phoneNumber.dirty || phoneNumber.touched)">
+                  <p *ngIf="phoneNumber.errors.required">Phone Number name is required</p>
+                </div>
+                </div>
+              </div>
+  
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-12 col-form-label">Resume Version</label>
+                <div class="col-sm-12">
+                    
+                <input type="text"
+                    class="form-control"
+                    name="resumeVersion"
+                    [(ngModel)]="application.resumeVersion"
+                    required
+                    #resumeVersion="ngModel">
+                <div class="form-control-feedback"
+                  *ngIf="resumeVersion.errors && (resumeVersion.dirty || resumeVersion.touched)">
+                  <p *ngIf="resumeVersion.errors.required">Resume Version name is required</p>
+                </div>
+                </div>
+              </div>
+  
+              <div class="follow-ups">
+                <label>Follow ups</label> <br/>
+                <ol>
+                  <li *ngFor="let fu of application.followUps">{{fu}}</li>
+                </ol>
+                
+                <br/>
+                <textarea class="form-control" #newfollowup></textarea>
+                <br/>
+                <p class="btn btn-sm btn-secondary"  (click)="addFollowUp()"><i class="fa fa-edit" (click)="addFollowUp()"></i>Add new follow up</p>
+              </div>
+
+              <br/><br/>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </fieldset>
+
+            
+          </form>
+    </div>
+    <div class="col-1"></div>
+  </div>

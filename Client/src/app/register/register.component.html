@@ -1,0 +1,105 @@
+<div class="container">
+  <br/><br/><br/>
+  <div class="row">
+      <div class="col-4"></div>
+      <div class="col-6">
+          <h3>Register New User</h3>
+          <form
+          #f = "ngForm"
+          (ngSubmit)="onSubmit()">
+        
+          <div class="form-group row">
+            <label for="firstname" class="col-sm-10 col-form-label">Firstname</label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                name="firstname"
+                [(ngModel)] = "user.firstname"
+                required
+                #firstname="ngModel" />
+        
+                <div class="form-control-feedback" *ngIf="firstname.errors && (firstname.dirty || firstname.touched)">
+                  <p *ngIf="firstname.errors.required">Firstname is required.</p>
+                </div>
+            </div>
+          </div>
+        
+          <div class="form-group row">
+            <label for="lastname" class="col-sm-10 col-form-label">Lastname</label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                name="lastname"
+                [(ngModel)] = "user.lastname"
+                required
+                #lastname="ngModel" />
+        
+                <div class="form-control-feedback" *ngIf="lastname.errors && (lastname.dirty || lastname.touched)">
+                  <p *ngIf="lastname.errors.required">Lastname is required.</p>
+                </div>
+            </div>
+          </div>
+        
+        
+          <div class="form-group row">
+            <label for="email" class="col-sm-10 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                name="email"
+                [(ngModel)] = "user.email"
+                required
+                pattern="[^@]*@[^@]"
+                #email="ngModel" />
+        
+                <div class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
+                  <p *ngIf="email.errors.required">Email is required.</p>
+                  <p *ngIf="email.errors.pattern"> @ is required.</p>
+                </div>
+            </div>
+          </div>
+        
+          <div class="form-group row">
+            <label for="username" class="col-sm-10 col-form-label">Username</label>
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                name="username"
+                [(ngModel)] = "user.username"
+                required
+                #username="ngModel" />
+        
+                <div class="form-control-feedback" *ngIf="username.errors && (username.dirty || username.touched)">
+                  <p *ngIf="username.errors.required">Username is required.</p>
+                </div>
+            </div>
+          </div>
+        
+          <div class="form-group row">
+            <label for="password" class="col-sm-10 col-form-label">Password</label>
+            <div class="col-sm-10">
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                [(ngModel)] = "user.password"
+                required
+                #password="ngModel" />
+        
+                <div class="form-control-feedback" *ngIf="password.errors && (password.dirty || password.touched)">
+                  <p *ngIf="password.errors.required">Password is required.</p>
+                </div>
+            </div>
+          </div>
+        
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="col-3"></div>
+  </div>
+  
+</div>
